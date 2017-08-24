@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <script th:href="@{/js/jquery-1.11.3.min.js}"/>
+    <script th:href="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>city_id</th>
+            <th>city_name</th>
+            <th>city_py</th>
+            <th>parent_id</th>
+            <th>city_state</th>
+            <th>root_id</th>
+            <th>level</th>
+            <th>py_frist</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="lm : ${listMap}">
+            <td th:text="${lm[id]}"></td>
+            <td th:text="${lm[city_id]}"></td>
+            <td th:text="${lm[city_name]}"></td>
+            <td th:text="${lm[city_py]}"></td>
+            <td th:text="${lm[parent_id]}"></td>
+            <td th:text="${lm[city_state]}"></td>
+            <td th:text="${lm[root_id]}"></td>
+            <td th:text="${lm[level]}"></td>
+            <td th:text="${lm[py_frist]}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

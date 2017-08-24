@@ -1,0 +1,51 @@
+#spring
+spring:
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+#server
+server:
+  context-path: /war-repair-admin
+  port: 9999
+  session:
+    timeout: 30
+#log
+logging:
+  level:
+    root: debug
+    com.xiaoyuh: debug
+#配置监听文件变化，实现热部署
+devtools:
+  restart:
+    additional-paths: war-repair-admin/src/main
+#mybatis
+mybatis:
+  mapper-locations: classpath*:com/tgs/**/*Mapper.xml
+  configuration:
+    cache-enabled: true
+    lazy-loading-enabled: false
+    multiple-result-sets-enabled: true
+    use-column-label: true
+    use-generated-keys: false
+    auto-mapping-behavior: partial
+    auto-mapping-unknown-column-behavior: warning
+    default-executor-type: simple
+    default-fetch-size: 100
+    safe-row-bounds-enabled: false
+    local-cache-scope: session
+    jdbc-type-for-null: other
+    lazy-load-trigger-methods: new HashSet<String>(){{add("equals");add("clone");add("hashCode");add("toString");}}
+#分页
+pagehelper:
+  #dialect: com.github.pagehelper.dialect.helper.MySqlDialect
+  helper-dialect: com.github.pagehelper.dialect.helper.MySqlDialect
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+  auto-dialect: true
+  close-conn: false
