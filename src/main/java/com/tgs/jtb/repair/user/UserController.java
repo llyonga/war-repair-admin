@@ -41,12 +41,7 @@ public class UserController {
         System.out.println(list.size());
         PageInfo<Map> pageInfo = new PageInfo<>(list);
         Page page = (Page) list;
-        /*for (int i=0; i<page.size(); i++) {
-            Map map = page.get(i);
-            for (Object o : map.keySet()){
-                System.out.println(o+ ":" +map.get(o));
-            }
-        }*/
+
         model.addAttribute("listMap",page);
         return "user/userList";
     }
