@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.tgs.tgsit.framework.annotation.jdbc.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ import java.util.Map;
  * Created by 小五儿 on 2017-08-21
  */
 @Service
+@Transactional
 public class UserService {
 
     @Autowired
